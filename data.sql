@@ -14,3 +14,46 @@ VALUES
 	('Boarmon', 'Jun-07-2005', 20.4, true, 7),
 	('Blossom', 'Oct-13-1998', 17, true, 3),
 	('Ditto', 'May-14-2022', 22, true, 4);
+
+--  Insert data into owners table
+
+INSERT INTO owners (full_name, age)
+VALUES 
+	('Sam Smith', 34),
+	('Jennifer Orwell', 19),
+	('Bob', 45),
+	('Melody Pond', 77),
+	('Dean Winchester', 14),
+	('Jodie Whittaker', 38);
+
+-- Insert data into species table
+
+INSERT INTO species (name)
+VALUES 
+	('Pokemon'),
+	('Digimon');
+
+-- Update animals' species_id
+
+update animals set species_id = 1
+where right(name, 3) = 'mon';
+
+update animals set species_id = 1
+where right(name, 3) != 'mon';
+
+--  Update animals' owner_id
+
+update animals set owner_id = 1
+where name = 'Agumon';
+
+update animals set owner_id = 2
+where name = 'Gabumon' or name = 'Pikachu';
+
+update animals set owner_id = 3
+where name = 'Devimon' or name = 'Plantmon';
+
+update animals set owner_id = 4
+where name = 'Charmander' or name = 'Squirtle' or name = 'Blossom';
+
+update animals set owner_id = 5
+where name = 'Angemon' or name = 'Boarmon';
