@@ -13,7 +13,7 @@ SELECT * FROM animals WHERE weight_kg between 10.4 and 17.3;
 
 BEGIN;
 
-UPDATE animals SET species = 'unspecified' WHERE neutered = false;
+UPDATE animals SET species = 'unspecified';
 
 ROLLBACK;
 
