@@ -35,7 +35,7 @@ VALUES
 
 -- Update animals' species_id
 
-update animals set species_id = 1
+update animals set species_id = 2
 where right(name, 3) = 'mon';
 
 update animals set species_id = 1
