@@ -1,7 +1,7 @@
 /* Database schema to keep the structure of entire database. */
 
 CREATE TABLE animals (
-    id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
+    id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name VARCHAR(100),
     date_of_birth DATE,
     escape_attempts INT,
