@@ -35,3 +35,24 @@ ALTER TABLE animals DROP COLUMN species;
 ALTER TABLE animals ADD species_id INTEGER REFERENCES species(id);
 ALTER TABLE animals ADD owner_id INTEGER REFERENCES owners(id);
 
+
+-- Create a table named vets
+
+CREATE TABLE vets (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(50),
+	age INTEGER,
+	date_of_graduation DATE
+);
+
+CREATE TABLE specializations (
+	id serial PRIMARY KEY,
+	vets_id INTEGER REFERENCES vets(id) ON DELETE CASCADE,
+	species_id INTEGER REFERENCES species(id) ON DELETE CASCADE
+);
+
+CREATE TABLE visits (
+  vets_id INTEGER REFERENCES vets(id) ON DELETE CASCADE,
+  animals_id INTEGER REFERENCES animals(id) ON DELETE CASCADE,
+	visits_date DATE
+);
