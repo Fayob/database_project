@@ -56,3 +56,9 @@ CREATE TABLE visits (
   animals_id INTEGER REFERENCES animals(id) ON DELETE CASCADE,
 	visits_date DATE
 );
+
+--  Create Index
+
+CREATE INDEX ON visits (animals_id);
+CREATE INDEX ON visits (vets_id);
+CREATE INDEX ON owners (email);
