@@ -69,11 +69,3 @@ CREATE INDEX ON visits (animals_id);
 CREATE INDEX ON visits (vets_id);
 CREATE INDEX ON owners (email);
 
--- Create index for all foreign key
-
-CREATE INDEX ON invoices (medical_history_id);
-CREATE INDEX ON medical_histories (patient_id);
-CREATE INDEX ON medical_treatment (medical_histories_id);
-CREATE INDEX ON medical_treatment (treaments_id);
-CREATE INDEX ON invoice_items (invoice_id);
-CREATE INDEX ON invoice_items (treatment_id);
