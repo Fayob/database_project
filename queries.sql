@@ -197,5 +197,3 @@ group by species.name
 limit 1
 
 -- query newly insert data
-
-SELECT COUNT(*) FROM visits where animals_id = 4;
