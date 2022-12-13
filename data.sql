@@ -101,3 +101,9 @@ VALUES
   (9, 2, 'Aug-03-2020'),
   (10, 3, 'May-24-2020'),
   (10, 1, 'Jan-11-2021');
+
+
+-- Add email column to owners table
+
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
