@@ -16,3 +16,26 @@ CREATE TABLE treatments (
   type VARCHAR (50),
   name VARCHAR (100)
 );
+
+
+CREATE TABLE medical_treatment (
+	medical_histories_id INT REFERENCES medical_histories(id),
+  treaments_id INT REFERENCES treatments (id)
+);
+
+CREATE TABLE invoices (
+	id INT PRIMARY KEY,
+  total_amount DECIMAL,
+  generated_at TIMESTAMP,
+  payed_at TIMESTAMP,
+  medical_history_id INT REFERENCES medical_histories(id) UNIQUE
+);
+
+CREATE TABLE invoice_items (
+	id serial PRIMARY KEY,
+  unit_price DECIMAL,
+  quantity INT,
+  total_price DECIMAL,
+  invoice_id INT REFERENCES invoices(id),
+	treatment_id INT REFERENCES treatments(id)
+);
