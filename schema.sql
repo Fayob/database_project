@@ -45,11 +45,17 @@ CREATE TABLE vets (
 	date_of_graduation DATE
 );
 
+
+-- Create a table named specializations
+
 CREATE TABLE specializations (
 	id serial PRIMARY KEY,
 	vets_id INTEGER REFERENCES vets(id) ON DELETE CASCADE,
 	species_id INTEGER REFERENCES species(id) ON DELETE CASCADE
 );
+
+
+-- Create a table named visits
 
 CREATE TABLE visits (
   vets_id INTEGER REFERENCES vets(id) ON DELETE CASCADE,
@@ -57,7 +63,7 @@ CREATE TABLE visits (
 	visits_date DATE
 );
 
---  Create Index
+--  Create Index for each table
 
 CREATE INDEX ON visits (animals_id);
 CREATE INDEX ON visits (vets_id);
